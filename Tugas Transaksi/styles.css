@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-image: url(image/rtyy.jpg);
+    position: relative;
+    padding: 20px 0;
+    color: rgb(255, 255, 255);
+    background-size: cover;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 40%;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+
+
+.contain {
+    width: 36%;
+    margin: 10px 0;
+    background-color: blue;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    border: 3px solid black;
+    float: left;
+    margin-left: 5px;
+}
+
+.barang {
+    margin: auto;
+    background: black;
+    text-align: center;
+    font-family: 'Lobster Two', cursive;
+    padding: 10px 10px;
+}
+
+.tab {
+    margin-left: 5px;
+    margin-bottom: 2px;
+    margin-top: 10px;
+    font-size: large;
+}
+
+.contain td {
+    width: 400px;
+}
+
+
+.contain td input[type=text],
+.contain td input[type=number],
+.contain td input[type=datetime-local] {
+    width: 82%;
+    padding: 10px 10px;
+    margin: 25px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: medium;
+}
+
+.contain select {
+    width: 80%;
+    padding: 10px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: medium;
+}
+
+#ganti {
+    width: 40%;
+    padding: 5px 0;
+    background-color: aqua;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-style: oblique;
+    margin-left: 60%;
+    margin-bottom: 1px;
+}
+
+#edit {
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: oblique;
+    color: black;
+}
+
+.tabbrg {
+    width: 61.60%;
+    font-family: 'Times New Roman', Times, serif;
+    float: right;
+    margin: 10px 5px;
+    font-size: medium;
+}
+
+.th {
+    background-color: orange;
+}
+
+thead th,
+thead td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+
+#tampilan {
+    background-color: white;
+    border: 1px solid black;
+    text-align: center;
+    font-size: medium;
+}
