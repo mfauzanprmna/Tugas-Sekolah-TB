@@ -7,35 +7,25 @@ body {
     font-family: sans-serif;
 }
 
+/* Style Navbar */
 nav {
-    display: flex;
-    justify-content: space-around;
     background-image: url(image/rtyy.jpg);
     position: relative;
     padding: 20px 0;
     color: rgb(238, 255, 3);
     background-size: cover;
     font-size: large;
+    text-align: center;
 }
 
-nav ul {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    width: 40%;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
+/* Jarak Tulisan pada Card */
 .image p,
 .image h3 {
     margin-left: 10px;
     margin-bottom: 5px;
 }
 
+/* Style tombol pada Card */
 .btnsewa {
     background-color: blue;
     color: white;
@@ -46,6 +36,7 @@ nav ul li a {
     margin-left: 10px;
 }
 
+/* Style untuk Card */
 .container {
     display: flex;
     justify-content: center;
@@ -78,11 +69,13 @@ img {
     width: 200px;
 }
 
+/* Style Keterangan */
 .ket {
     text-align: center;
     font-size: large;
 }
 
+/* Style untuk Input Sewa */
 .contain {
     font-family: 'Oswald', sans-serif;
     margin: 10px 200px;
@@ -91,6 +84,7 @@ img {
     border: 1px solid black;
 }
 
+/* Style untuk Header */
 .barang {
     margin: auto;
     text-align: center;
@@ -98,6 +92,7 @@ img {
     padding: 10px 10px;
 }
 
+/* Style untuk Inputan data */
 .tab {
     margin-left: 150px;
     margin-bottom: 2px;
@@ -134,8 +129,21 @@ img {
     font-size: medium;
 }
 
+.hitung {
+    width: 80%;
+    padding: 10px 0;
+    background-color: coral;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-style: oblique;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+
 #ganti {
-    width: 100%;
+    width: 80%;
     padding: 10px 0;
     background-color: aqua;
     font-size: medium;
@@ -143,6 +151,8 @@ img {
     color: black;
     font-style: oblique;
     margin-bottom: 10px;
+    margin-left: 50px;
+    border-radius: 5px;
 }
 
 #edit {
@@ -150,8 +160,15 @@ img {
     font-family: Arial, Helvetica, sans-serif;
     font-style: oblique;
     color: black;
+    width: 80%;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    border-radius: 5px;
+
 }
 
+/* Style untuk Tabel Output */
 hr {
     margin: 20px;
 }
@@ -183,7 +200,7 @@ thead td {
     font-size: medium;
 }
 
-.btn {
+.btna {
     width: 40%;
     border-radius: 5px;
     margin: 2px 5px;

@@ -5,29 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <title>Penyewaan Lapangan</title>
 </head>
 
 <body>
+    <!-- Navbar -->
     <nav>
         <div class="logo">
             <h4>Strep Rental</h4>
         </div>
 
     </nav>
+
+    <!-- Card barang -->
     <div class="container">
+        <!-- Card PS 2 -->
         <div class="image">
             <img src="image/ps2.jpg" alt="">
             <h3>Playstation 2</h3>
             <p>Playstation ini di sewa Rp.5000/jam</p>
             <button class="btnsewa" onclick="ps2()">Sewa</button>
         </div>
+
+        <!-- Card PS 3 -->
         <div class="image">
             <img src="image/ps3.webp" alt="">
             <h3>Playstation 3</h3>
             <p>Playstation ini di sewa Rp.10.000/jam</p>
             <button class="btnsewa" onclick="ps3()">Sewa</button>
         </div>
+
+        <!-- Card PS 4 -->
         <div class="image">
             <img src="image/ps4.webp" alt="">
             <h3>Playstation 4</h3>
@@ -35,33 +45,55 @@
             <button class="btnsewa" onclick="ps4()">Sewa</button>
         </div>
     </div>
+
+    <!-- Keterangan -->
     <div class="ket">
         <h2>Keterangan</h2>
         <ul>
-            <li>Peminjaman di atas 4 jam mendapatkan 1 jam tambahan</li>
-            <li>Harga total sampai 50.000 mendapatkan diskon 30%</li>
+            <li>Peminjaman di atas 4 jam mendapatkan diskon 10%</li>
+            <li>Peminjaman di atas 10 jam mendapatkan 1 jam tambahan dan diskon 10%</li>
         </ul>
     </div>
+
+
     <hr>
     <hr>
+
+    <!-- Input Sewa -->
     <div class="contain" name="form" onsubmit="event.preventDefault()">
+
+        <!-- Header -->
         <div class="barang">
             <h1>Form Input Sewa</h1>
         </div>
+        <!-- Form Input -->
         <table class="tab">
             <div class="form-group">
                 <tr>
-                    <td><label for="kode">Kode Sewa</label></td>
-                    <td><input type="text" name="kode" class="form-input" id="kode"></td>
+                    <td><label for="kode">Billing</label></td>
+                    <td>
+                        <select name="kode" id="kode" onchange="billing()">
+                            <option value=""></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td><label for="nama">Nama Pembeli</label></td>
-                    <td><input type="text" name="nama" class="form-input" id="pembeli"></td>
+                    <td><input type="text" name="nama" class="form-input" id="pembeli" placeholder="Nama Asli"></td>
                 </tr>
                 <tr>
                     <td><label for="jenis">Jenis Playstation</label></td>
                     <td>
-                        <select name="jenis" id="jenis" onchange="hitungtotal()">
+                        <select name="jenis" id="jenis">
                             <option value=""></option>
                             <option value="Ps 2">Ps 2</option>
                             <option value="Ps 3">Ps 3</option>
@@ -74,12 +106,8 @@
                     <td><input type="text" name="awal" class="form-input" id="awal"></td>
                 </tr>
                 <tr>
-                    <td><label for="kembali">Barang Kembali</label></td>
-                    <td><input type="text" name="kembali" class="form-input" id="kembali"></td>
-                </tr>
-                <tr>
                     <td><label for="jam">Waktu Sewa</label></td>
-                    <td><input type="text" name="jam" class="form-input" id="jam"></td>
+                    <td><input type="text" name="jam" class="form-input" id="jam" placeholder="Satuan Jam"></td>
                 </tr>
                 <tr>
                     <td><label for="harga">Harga</label></td>
@@ -87,32 +115,106 @@
                 </tr>
                 <tr>
                     <td></td>
+                    <td><button class="hitung" type="submit" onclick="hitung()">Hitung total</button></td>
+                    <td><p><===Klik untuk Harga Total</p></td>
+                </tr>
+                <tr>
+                    <td><label for="total">Harga Total</label></td>
+                    <td><input type="text" name="total" class="form-input" id="total"></td>
+                </tr>
+                <tr>
+                    <td><label for="">Bayar</label></td>
+                    <td><input type="text" name="bayar" class="form-input" id="bayar"></td>
+                </tr>
+                <tr>
+                    <td></td>
                     <td></td>
                     <td><button type="submit" id="ganti" onclick="add()">Simpan</button></td>
+                    <td><button type="submit" id="edit" onclick="datasimpan()">Edit</button></td>
                 </tr>
             </div>
         </table>
     </div>
+
+
     <hr>
     <hr>
+
+    <!-- Tabel Output -->
     <table class="tabbrg" border="5">
         <thead class="th">
             <th>No</th>
-            <th>Kode Sewa</th>
+            <th>Billing</th>
             <th>Nama Pembeli</th>
             <th>Jenis Barang</th>
             <th>Awal Sewa</th>
-            <th>Barang Kembali</th>
             <th>Waktu Sewa</th>
             <th>Harga Total</th>
+            <th>Uang Bayar</th>
+            <th>Kembalian</th>
             <th>Action</th>
         </thead>
         <tbody id="tampilan">
 
         </tbody>
     </table>
-    <script src="script.js"></script>
 
+    <!-- Detail Pesan menggunakan Modal -->
+    <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Detail Sewa</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+
+                        <label for="kodeproduk">Billing</label>
+                        <input type="text" class="form-control" id="kodes" disabled value="">
+
+                        <label for="namaproduk">Nama Penyewa</label>
+                        <input type="text" class="form-control" id="names" disabled value="">
+
+                        <label for="hargaproduk">Jenis Ps</label>
+                        <input type="text" class="form-control" id="jeniss" disabled value="">
+
+                        <label for="satuan">Mulai Sewa</label>
+                        <input type="text" class="form-control" id="awals" disabled value="">
+
+                        <label for="kategori">Lama Sewa</label>
+                        <input type="text" class="form-control" id="waktu" disabled value="">
+
+                        <label for="harga">Harga Total</label>
+                        <input type="text" class="form-control" id="hargas" disabled value="">
+
+                        <label for="tanggal">Tanggal</label>
+                        <input type="text" class="form-control" id="tanggal" disabled value="">
+
+                        <label for="bayaran">Bayar</label>
+                        <input type="text" class="form-control" id="bayaran" disabled value="">
+
+                        <label for="kembalian">Kembalian</label>
+                        <input type="text" class="form-control" id="kembalian" disabled value="">
+
+                    </div>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Kembali</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
