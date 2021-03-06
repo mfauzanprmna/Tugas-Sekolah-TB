@@ -250,6 +250,11 @@ function billing() {
             ht = 13000;
             document.getElementById('awal').value = james + " : " + minuts;
             break;
+        case "10":
+            ps = "Ps 4";
+            ht = 13000;
+            document.getElementById('awal').value = james + " : " + minuts;
+            break;
         default:
             break;
     }
