@@ -1,0 +1,39 @@
+/* Style Font Profile */
+.color {
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Style Jumbotron */
+.jumbotron {
+    padding: 100px 100px;
+    background-size: cover;
+    background-position-y: -200px;
+}
+
+/* Style Flex */
+.halaman {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Style Shadow */
+.items {
+    box-shadow: 0 0 3px rgb(0, 0, 0, 0.7);
+}
+
+/* Style Hover */
+.project {
+    position: relative;
+}
+
+.tombol {
+    position: absolute;
+    transform: scaleY(0);
+    transition: transform .5s;
+}
+
+.project:hover .tombol {
+    transform: scaleY(1);
+}
