@@ -37,6 +37,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Contact Us</a>
                         </li>
+                        <li class="nav-item ms-3">
+                            <a href="admin.php"><button class="btn btn-primary">Admin</button></a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -50,7 +53,7 @@
                     $query = mysqli_query($conn, $sql);
                     while ($pel = mysqli_fetch_array($query)){;
                 ?>
-                <img src="<?php echo $pel['gambar'] ?>" alt="" style="width: 300px;" class="rounded-circle img-thumbnail">
+                <img src="<?php echo $pel['gambar'] ?>" alt="" width="300px" height="300px" class="rounded-circle img-thumbnail">
                 <h1 class="display-4 color"><?php echo $pel['nama'] ?></h1>
                 <p class="lead color"><?php echo $pel['jurusan'] ?></p>
                 <?php } ?>
@@ -105,6 +108,9 @@
                 ?>
                 <div class="alert alert-danger" role="alert">
                     Data Tidak Boleh Kosong!
+                    <button type="button" class="close btn float-end" data-bs-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <?php } ?>
                 <?php 
@@ -112,6 +118,9 @@
                 ?>
                 <div class="alert alert-success" role="alert">
                     Data Berhasil Terkirim!
+                    <button type="button" class="close btn float-end" data-bs-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <?php } ?>
                 <form class="ms-5 me-5" method="POST" action="simpan.php">

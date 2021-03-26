@@ -9,7 +9,7 @@ include 'koneksi.php';
     $sql = "DELETE FROM gallery where id='$id'";
     $query = mysqli_query($conn,$sql);
     if ($query){
-        header('Location: admin.php');
+        header('Location: admin.php?success');
     }else{
         header('location: hapus.php?status=gagal');
     }

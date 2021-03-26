@@ -4,7 +4,7 @@
     // Edit Profile
     if(isset($_POST['edit'])){
         $id = $_POST['id'];
-        $gambar = $_POST['gambar'];
+        $gambar = $_POST['gambar1'];
         $nama = $_POST['nama'];
         $jurusan = $_POST['jurusan'];
         $about1 = $_POST['about1'];

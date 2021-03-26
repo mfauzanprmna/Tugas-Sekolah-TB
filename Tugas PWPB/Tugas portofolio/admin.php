@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="style1.css">
 
     <style>
-
+        .tambah:hover {
+            background: rgb(0, 0, 0, 0.8);
+        }
     </style>
 
     <title>Admin</title>
@@ -58,12 +60,14 @@
                     while ($pel = mysqli_fetch_array($query)){;
                 ?>
                 <input type="hidden" name="" id="" value="<?php echo $pel['id_isi'] ?>">
-                <img src="<?php echo $pel['gambar'] ?>" alt="" style="width: 300px;" class="rounded-circle img-thumbnail">
-                <p class="mt-4">
-                    <a href="formedit.php?id_isi=<?php echo $pel['id_isi'] ?>">Edit Profile</a>
-                </p>
+                <img src="<?php echo $pel['gambar'] ?>" alt="" width="300px" height="300px" class="rounded-circle img-thumbnail">
                 <h1 class="display-4 color"><?php echo $pel['nama'] ?></h1>
                 <p class="lead color"><?php echo $pel['jurusan'] ?></p>
+                <p class="mt-4">
+                    <a href="formedit.php?id_isi=<?php echo $pel['id_isi'] ?>">
+                        <button type="button" class="btn btn-outline-primary">Edit Profile</button>
+                    </a>
+                </p>
                 <?php } ?>
             </div>
         </div>
@@ -91,6 +95,16 @@
         <!-- My Project -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#2bf8f8" fill-opacity="1" d="M0,224L48,229.3C96,235,192,245,288,224C384,203,480,149,576,154.7C672,160,768,224,864,250.7C960,277,1056,267,1152,261.3C1248,256,1344,256,1392,256L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>        
         <div class="pt-3 pb-3" id="project" style="background-color: rgb(43, 248, 248);">
+        <?php 
+            if(isset($_GET["success"])){;
+            ?>
+            <div class="alert alert-success" role="alert" id="alert">
+                    Data Berhasil Di Hapus
+                    <button type="button" class="close btn float-end" data-bs-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+            </div>
+        <?php } ?>
             <h1 class="text-center mb-4 mt-4">My Project</h1>
             <div class="container halaman">
                 <?php 
@@ -98,7 +112,7 @@
                     $querya = mysqli_query($conn, $sqla);
                     while ($pela = mysqli_fetch_array($querya)){;
                 ?>
-                <div class="card project ms-3 me-3 mb-3" style="width: 17rem; height: 17rem;">
+                <div class="card project mt-2 ms-3 me-3 mb-3" style="width: 17rem; height: 17rem;">
                     <img src="<?php echo $pela['gambar'] ?>" class="card-img-top" alt="..." width="100px" height="150px">
                     <p class="text-center ms-3 me-3 mt-2"><?php echo $pela['descr'] ?></p>
                     <div class="card tombol">
@@ -108,7 +122,7 @@
                 </div>
                 <?php } ?>
                 <button class="btn" data-bs-toggle="modal" data-bs-target="#modal">
-                    <div class="card border btn mb-3 ms-2 me-2" style="width: 17rem; height: 17rem;">
+                    <div class="card tambah border btn  mb-3 ms-2 me-2" style="width: 17rem; height: 17rem;">
                         <img class="m-auto" src="https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/plus-512.png" alt="" width="80px" height="80px">
                         </div>
                 </button>
@@ -154,8 +168,9 @@
                 while ($pel = mysqli_fetch_array($query)){;
             ?>
             <div class="card  p-2 mb-3 items" style="width: 50rem;">
-                <p class="fs-6"><?php echo $pel['email'] ?></p>
                 <p><span class="fw-bold" style="margin-right: 200px;"><?php echo $pel['nama'] ?></span><span class="float-end fw-bold number-card" id="hrg"><?php echo date("l, d M Y") ?></span></p>
+                <p class="fs-6 m-0"><?php echo $pel['email'] ?></p>
+                <hr>
                 <p class="fw-light"><span class=" number-card mt-3" style="margin-right: 120px;"><?php echo $pel['pesan'] ?></span></p>
             </div>
             <?php } ?>
