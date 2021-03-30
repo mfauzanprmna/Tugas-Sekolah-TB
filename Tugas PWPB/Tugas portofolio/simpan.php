@@ -1,4 +1,5 @@
 <?php 
+    session_start();
     include 'koneksi.php';
 
     // Simpan Form Contact
@@ -26,6 +27,38 @@
             header("Location: admin.php");
         } else {
             header("Location: admin.php?status=gagal");
+        }
+    }
+
+    if(isset($_POST['register'])){
+        $user = $_POST['user'];
+        $pass = $_POST['pass'];
+        $pass = password_hash($pass, PASSWORD_DEFAULT);
+        $sql = "INSERT INTO user (id, username, password) VALUES ('', '$user', '$pass')";
+        $query = mysqli_query($conn, $sql);
+        if($query){
+            header("Location: login.php");
+        } else {
+            header("Location: regis.php?status=gagal");
+        }
+        return mysqli_affected_rows($conn);
+    }
+
+    if( isset($_POST['login']) ) {
+        $user = $_POST['user'];
+        $pass = $_POST['pass'];
+
+        $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$user'");
+
+        if( mysqli_num_rows($result) === 1 ){
+            $row = mysqli_fetch_assoc($result);
+            if ( password_verify($pass, $row['password']) ){
+                $_SESSION['login'] = true;
+                header("Location: admin.php");
+                exit;
+            } else {
+                header("Location: login.php?status=gagal");
+            }
         }
     }
 ?>

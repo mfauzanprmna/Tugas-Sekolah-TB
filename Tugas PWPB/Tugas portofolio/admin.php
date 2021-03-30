@@ -1,4 +1,9 @@
 <?php 
+    session_start();
+    if( !isset($_SESSION['login']) ){
+        header("Location: login.php");
+        exit;
+    }
     include 'koneksi.php';
 ?>
 <!doctype html>
@@ -45,6 +50,9 @@
                         </li>
                         <li class="nav-item ms-3">
                             <a href="index.php"><button class="btn btn-primary">User</button></a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a href="logout.php"><button class="btn btn-danger">Logout</button></a>
                         </li>
                     </ul>
                 </div>
@@ -183,7 +191,6 @@
             <h6>Muhammad Fauzan Permana</h6>
         </footer>
         
-
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
