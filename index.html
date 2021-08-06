@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Starbhak Mart</title>
+</head>
+
+<body>
+
+    <h1 class="mart">Starbhak Mart</h1>
+
+    <div class="container">
+        <table>
+            <div class="form-group">
+                <tr>
+                    <td><label for="kodeproduk">Kode Produk</label></td>
+                    <td><input type="hidden" class="form-control" id="kode"></td>
+                </tr>
+                <tr>
+                    <td><label for="namaproduk">Nama Produk</label></td>
+                    <td><input type="text" class="form-control" id="nama"></td>
+                </tr>
+                <tr>
+                    <td><label for="hargaproduk">Harga Produk</label></td>
+                    <td><input type="number" class="form-control" id="harga"></td>
+                </tr>
+                <tr>
+                    <td><label for="satuanproduk">Satuan Produk</label></td>
+                    <td>
+                        <select class="form-control" id="satuan">
+                            <option value="">Pilih Satuan</option>
+                            <option value="gelas">Gelas</option>
+                            <option value="botol">Botol</option>
+                            <option value="cup">Cup</option>
+                            <option value="mangkuk">Mangkuk</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="kategoriproduk">Kategori Produk</label></td>
+                    <td>
+                        <select class="form-control" id="kategori">
+                            <option value="">Pilih Kategori</option>
+                            <option value="dingin">Dingin</option>
+                            <option value="hangat">Hangat</option>
+                            <option value="panas">Panas</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="stokproduk">Stok Produk</label></td>
+                    <td><input type="number" class="form-control" id="stok"></td>
+                </tr>
+                <tr>
+                    <td><label for="gamabrproduk">URL Gambar</label></td>
+                    <td><input type="text" class="form-control" id="img"></td>
+                </tr>
+                <tr>
+                    <td><button type="submit" class="btn btn-primary">Submit</button></td>
+                </tr>
+            </div>
+        </table>
+    </div>
+    <table>
+        <thead>
+            <th>No</th>
+            <td>Kode Produk</td>
+            <td>Nama Produk</td>
+            <td>Harga Produk</td>
+            <td>Satuan Produk</td>
+            <td>Kategori Produk</td>
+            <td>Stok Produk</td>
+            <td>Gambar Produk</td>
+        </thead>
+        <tbody id="tampilan">
+
+        </tbody>
+    </table>
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Edit Produk</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table>
+                        <tr>
+                            <td><label for="kodeproduk">Kode Produk</label></td>
+                            <td><input type="hidden" class="form-control" id="kproduk"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="namaproduk">Nama Produk</label></td>
+                            <td><input type="text" class="form-control" id="nproduk"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="hargaproduk">Harga Produk</label></td>
+                            <td><input type="number" class="form-control" id="hproduk"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="satuanproduk">Satuan Produk</label></td>
+                            <td>
+                                <select class="form-control" id="sproduk">
+                                    <option value="">Pilih Satuan</option>
+                                    <option value="gelas">Gelas</option>
+                                    <option value="botol">Botol</option>
+                                    <option value="cup">Cup</option>
+                                    <option value="mangkuk">Mangkuk</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo accusantium laudantium velit illum voluptatem, obcaecati repellat suscipit repudiandae debitis hic esse, assumenda deserunt amet qui tenetur earum ratione cumque natus!
+                            <td><label for="kategoriproduk">Kategori Produk</label></td>
+                            <td>
+                                <select class="form-control" id="kproduk">
+                                    <option value="">Pilih Kategori</option>
+                                    <option value="dingin">Dingin</option>
+                                    <option value="hangat">Hangat</option>
+                                    <option value="panas">Panas</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="stokproduk">Stok Produk</label></td>
+                            <td><input type="number" class="form-control" id="stproduk"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="gamabrproduk">URL Gambar</label></td>
+                            <td><input type="text" class="form-control" id="url"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">Ubah</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
