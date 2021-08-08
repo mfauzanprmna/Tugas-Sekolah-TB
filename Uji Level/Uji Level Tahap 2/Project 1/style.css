@@ -1,0 +1,32 @@
+nav {
+    background-color: rgb(0, 0, 0);
+    margin-top: 0;
+}
+
+.jumbotron {
+    height: 400px;
+    background-image: url(https://images.pexels.com/photos/9379/drinking-alley-fun-bowling-9379.jpg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260);
+    background-size: cover;
+    background-position-y: -200px;
+    color: white;
+}
+
+.judullist {
+    height: 50px;
+}
+
+h1 {
+    color: white;
+    font-size: large;
+}
+
+.tablebelanj {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.over {
+    overflow: auto;
+    height: 74%;
+}
